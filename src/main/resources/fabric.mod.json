@@ -24,6 +24,6 @@
 	},
 	"depends": {
 		"fabricloader": ">=0.8.2+build.194",
-		"minecraft": "*"
+		"minecraft": ">=1.16-alpha.20.14.a"
 	}
 }
