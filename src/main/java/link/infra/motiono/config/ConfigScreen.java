@@ -31,15 +31,15 @@ public class ConfigScreen extends Screen {
 		addButton(new AbstractButtonWidget((this.width / 2) - 40, 80, 80, 20, "Done") {
 			@Override
 			public void onClick(double mouseX, double mouseY) {
-				assert minecraft != null;
-				minecraft.openScreen(parent);
+				assert client != null;
+				client.openScreen(parent);
 			}
 		});
 	}
 
 	public void render(int mouseX, int mouseY, float delta) {
 		this.renderBackground();
-		this.drawCenteredString(this.font, this.title.asFormattedString(), this.width / 2, 20, 0x00FFFFFF);
+		this.drawCenteredString(textRenderer, this.title.asFormattedString(), this.width / 2, 20, 0x00FFFFFF);
 		super.render(mouseX, mouseY, delta);
 	}
 
@@ -50,7 +50,7 @@ public class ConfigScreen extends Screen {
 
 	@Override
 	public void onClose() {
-		assert minecraft != null;
-		minecraft.openScreen(parent);
+		assert client != null;
+		client.openScreen(parent);
 	}
 }
