@@ -4,6 +4,7 @@ import com.mojang.authlib.GameProfile;
 import link.infra.motiono.config.ConfigHandler;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -12,8 +13,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AbstractClientPlayerEntity.class)
 public abstract class AbstractClientPlayerEntityMixin extends PlayerEntity {
-	public AbstractClientPlayerEntityMixin(World world, GameProfile profile) {
-		super(world, profile);
+	public AbstractClientPlayerEntityMixin(World world, BlockPos pos, GameProfile profile) {
+		super(world, pos, profile);
 	}
 
 	@Inject(method = "getSpeed()F", at = @At("HEAD"), cancellable = true)
