@@ -25,5 +25,8 @@
 	"depends": {
 		"fabricloader": ">=0.8.2+build.194",
 		"minecraft": ">=1.16-alpha.20.14.a"
+	},
+	"custom": {
+		"modmenu:clientsideOnly": true
 	}
 }
